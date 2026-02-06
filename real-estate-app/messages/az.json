@@ -1,0 +1,66 @@
+{
+    "Header": {
+        "brand_suffix": "Home",
+        "mortgage_cabinet": "İpoteka kabineti"
+    },
+    "Banner": {
+        "title": "Dövlət ipotekası - adi",
+        "subtitle": "Hər zaman dövlətin qayğısında - cəlbedici faiz dərəcələrindən siz də yararlanın!",
+        "stat_max_amount": "Maksimal məbləğ",
+        "stat_min_interest": "Minimal illik faiz",
+        "stat_max_duration": "Maksimal müddət",
+        "stat_max_duration_val": "25 ilədək",
+        "stat_min_down_payment": "Minimal ilkin ödəniş",
+        "btn_check": "Məbləği öyrənin",
+        "btn_more": "Daha ətraflı"
+    },
+    "Footer": {
+        "brand_suffix": "Home",
+        "description": "Premium ipoteka həlləri ilə mükəmməl evi tapmaqda etibarlı tərəfdaşınız.",
+        "col_quick_links": "Faydalı Linklər",
+        "col_services": "Xidmətlər",
+        "col_contact": "Bizimlə Əlaqə",
+        "link_about": "Haqqımızda",
+        "link_properties": "Əmlaklar",
+        "link_calculator": "İpoteka Kalkulyatoru",
+        "link_contact": "Əlaqə",
+        "link_valuation": "Əmlak Qiymətləndirməsi",
+        "link_products": "İpoteka Məhsulları",
+        "link_investment": "İnvestisiya Məsləhəti",
+        "link_support": "Dəstək Mərkəzi",
+        "rights": "© 2024 ABB Home. Bütün hüquqlar qorunur.",
+        "link_privacy": "Məxfilik Siyasəti",
+        "link_terms": "Xidmət Şərtləri",
+        "link_cookies": "Cookie Siyasəti",
+        "address": "Bakı, Azərbaycan"
+    },
+    "Admin": {
+        "title": "Yeni Elan",
+        "subtitle": "Portfelə yeni əmlak əlavə edin.",
+        "publish": "Layihəni Paylaş",
+        "processing": "Emal edilir...",
+        "no_image": "Şəkil Yoxdur",
+        "image_source": "Şəkil Mənbəyi",
+        "price_valuation": "Qiymət ($)",
+        "apr": "İllik Faiz (%)",
+        "term": "Müddət (İl)",
+        "project_title": "Layihə Adı",
+        "description": "Təsvir",
+        "placeholders": {
+            "title": "Əmlak adını daxil edin...",
+            "description": "Ətraflı əmlak təsviri..."
+        },
+        "alerts": {
+            "fill_required": "Zəhmət olmasa Qiymət və Şəkil URL-ni doldurun",
+            "success": "Əmlak uğurla yadda saxlanıldı!",
+            "error": "Yadda saxlarkən xəta baş verdi",
+            "generic_error": "Xəta baş verdi"
+        }
+    },
+    "Home": {
+        "apr": "İllik",
+        "year_term": "İllik Müddət",
+        "premium": "Premium",
+        "total_price": "Ümumi Qiymət"
+    }
+}

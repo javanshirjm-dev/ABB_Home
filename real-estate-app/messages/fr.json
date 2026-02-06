@@ -1,0 +1,66 @@
+{
+    "Header": {
+        "brand_suffix": "Home",
+        "mortgage_cabinet": "Espace Hypothécaire"
+    },
+    "Banner": {
+        "title": "Hypothèque d'État - Standard",
+        "subtitle": "Toujours soutenu par l'État - profitez de taux d'intérêt attractifs !",
+        "stat_max_amount": "Montant maximum",
+        "stat_min_interest": "Intérêt annuel minimum",
+        "stat_max_duration": "Durée maximale",
+        "stat_max_duration_val": "Jusqu'à 25 ans",
+        "stat_min_down_payment": "Acompte minimum",
+        "btn_check": "Vérifier l'éligibilité",
+        "btn_more": "En savoir plus"
+    },
+    "Footer": {
+        "brand_suffix": "Home",
+        "description": "Votre partenaire de confiance pour trouver la maison idéale avec des solutions hypothécaires premium.",
+        "col_quick_links": "Liens Rapides",
+        "col_services": "Services",
+        "col_contact": "Contactez-nous",
+        "link_about": "À Propos",
+        "link_properties": "Propriétés",
+        "link_calculator": "Calculatrice Hypothécaire",
+        "link_contact": "Contact",
+        "link_valuation": "Évaluation Immobilière",
+        "link_products": "Produits Hypothécaires",
+        "link_investment": "Conseil en Investissement",
+        "link_support": "Centre de Support",
+        "rights": "© 2024 ABB Home. Tous droits réservés.",
+        "link_privacy": "Politique de Confidentialité",
+        "link_terms": "Conditions de Service",
+        "link_cookies": "Politique de Cookies",
+        "address": "Bakou, Azerbaïdjan"
+    },
+    "Admin": {
+        "title": "Nouvelle Annonce",
+        "subtitle": "Créer une nouvelle entrée dans le portefeuille.",
+        "publish": "Publier le Projet",
+        "processing": "Traitement...",
+        "no_image": "Aucune Image",
+        "image_source": "Source de l'Image",
+        "price_valuation": "Évaluation du Prix ($)",
+        "apr": "TAEG (%)",
+        "term": "Durée (Années)",
+        "project_title": "Titre du Projet",
+        "description": "Description",
+        "placeholders": {
+            "title": "Entrez le nom de la propriété...",
+            "description": "Description détaillée de la propriété..."
+        },
+        "alerts": {
+            "fill_required": "Veuillez remplir le prix et l'URL de l'image",
+            "success": "Propriété enregistrée avec succès !",
+            "error": "Erreur lors de l'enregistrement",
+            "generic_error": "Une erreur est survenue"
+        }
+    },
+    "Home": {
+        "apr": "TAEG",
+        "year_term": "Durée (Ans)",
+        "premium": "Premium",
+        "total_price": "Prix Total"
+    }
+}

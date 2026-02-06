@@ -1,0 +1,66 @@
+{
+    "Header": {
+        "brand_suffix": "Home",
+        "mortgage_cabinet": "Mortgage Portal"
+    },
+    "Banner": {
+        "title": "State Mortgage - Standard",
+        "subtitle": "Always state-supported - take advantage of attractive interest rates!",
+        "stat_max_amount": "Maximum amount",
+        "stat_min_interest": "Minimum annual interest",
+        "stat_max_duration": "Maximum duration",
+        "stat_max_duration_val": "Up to 25 years",
+        "stat_min_down_payment": "Minimum down payment",
+        "btn_check": "Check amount",
+        "btn_more": "Learn more"
+    },
+    "Footer": {
+        "brand_suffix": "Home",
+        "description": "Your trusted partner in finding the perfect home with premium mortgage solutions.",
+        "col_quick_links": "Quick Links",
+        "col_services": "Services",
+        "col_contact": "Contact Us",
+        "link_about": "About Us",
+        "link_properties": "Properties",
+        "link_calculator": "Mortgage Calculator",
+        "link_contact": "Contact",
+        "link_valuation": "Property Valuation",
+        "link_products": "Mortgage Products",
+        "link_investment": "Investment Advice",
+        "link_support": "Support Center",
+        "rights": "© 2024 ABB Home. All rights reserved.",
+        "link_privacy": "Privacy Policy",
+        "link_terms": "Terms of Service",
+        "link_cookies": "Cookie Policy",
+        "address": "Baku, Azerbaijan"
+    },
+    "Admin": {
+        "title": "New Listing",
+        "subtitle": "Create a new property entry in the portfolio.",
+        "publish": "Publish Project",
+        "processing": "Processing...",
+        "no_image": "No Image",
+        "image_source": "Image Source",
+        "price_valuation": "Price Valuation ($)",
+        "apr": "APR (%)",
+        "term": "Term (Years)",
+        "project_title": "Project Title",
+        "description": "Description",
+        "placeholders": {
+            "title": "Enter property name...",
+            "description": "Detailed property description..."
+        },
+        "alerts": {
+            "fill_required": "Please fill in Price and Image URL",
+            "success": "Property saved successfully!",
+            "error": "Error saving property",
+            "generic_error": "Something went wrong"
+        }
+    },
+    "Home": {
+        "apr": "APR",
+        "year_term": "Year Term",
+        "premium": "Premium",
+        "total_price": "Total Price"
+    }
+}
