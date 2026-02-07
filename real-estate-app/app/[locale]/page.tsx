@@ -1,15 +1,20 @@
 import Header from '@/components/Header';
 import { connectDB } from '../lib/db';
 import Footer from '@/components/Footer';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Banner from '@/components/Banner';
 import { House } from '../models/House';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
-
     const { locale } = await params;
 
+    setRequestLocale(locale);
+
+    const t = await getTranslations({ locale, namespace: 'Home' });
+
     await connectDB();
-    const houses = await House.find({});
+
+    const houses = await House.find({}).lean();
 
     return (
         <div className="bg-slate-50 min-h-screen flex flex-col">
@@ -20,17 +25,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {houses.map((house: any) => (
                         <div
-                            key={house._id}
+                            key={house._id.toString()}
                             className="group bg-white rounded-2xl border-3 border-blue-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
                         >
                             <div className="relative h-64 overflow-hidden">
                                 <img
                                     src={house.image}
-                                    alt={house.title?.[locale]}
+                                    alt={house.title?.[locale] || 'House Image'}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">
-                                    {house.percentage}% APR
+                                    {house.percentage}% {t('apr')}
                                 </div>
                             </div>
 
@@ -45,16 +50,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
                                 <div className="flex items-center gap-3 mb-6">
                                     <span className="inline-flex items-center px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold">
-                                        {house.yearDuration} Year Term
+                                        {house.yearDuration} {t('year_term')}
                                     </span>
                                     <span className="inline-flex items-center px-3 py-1 rounded-lg bg-slate-50 text-slate-600 text-xs font-semibold">
-                                        Premium
+                                        {t('premium')}
                                     </span>
                                 </div>
 
                                 <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
                                     <div>
-                                        <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Total Price</p>
+                                        <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">{t("total_price")}</p>
                                         <p className="text-2xl font-bold text-slate-900">
                                             ${house.price?.toLocaleString()}
                                         </p>

@@ -6,7 +6,6 @@ export default function LanguageSwitcher() {
     const router = useRouter();
     const pathname = usePathname();
 
-    // Safely get the current locale, defaulting to 'en'
     const currentLocale = pathname.split('/')[1] || 'en';
 
     const languages = [
@@ -17,7 +16,7 @@ export default function LanguageSwitcher() {
 
     const handleLanguageChange = (newLocale: string) => {
         const pathSegments = pathname.split('/');
-        pathSegments[1] = newLocale; // Replace the locale segment
+        pathSegments[1] = newLocale;
         const newPath = pathSegments.join('/');
         router.push(newPath);
     };
@@ -34,14 +33,12 @@ export default function LanguageSwitcher() {
                             relative z-10 
                             rounded-xl font-bold transition-all duration-300 ease-out
                             
-                            /* --- Responsive Sizing --- */
-                            text-xs px-3 py-1.5       /* Mobile: Compact */
-                            md:text-sm md:px-5 md:py-2 /* Desktop: Spacious */
+                            text-xs px-3 py-1.5       
+                            md:text-sm md:px-5 md:py-2 
 
-                            /* --- Interaction Animations --- */
                             hover:opacity-90 active:scale-95
 
-                            /* --- Active vs Inactive Styles --- */
+                         
                             ${isActive
                                 ? 'text-white bg-gradient-to-r from-blue-500 to-blue-600 shadow-md transform scale-105'
                                 : 'text-gray-500 hover:text-gray-900 hover:bg-gray-200/50'

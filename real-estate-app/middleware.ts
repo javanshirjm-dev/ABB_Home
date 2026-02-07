@@ -3,10 +3,8 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export default async function middleware(request: NextRequest) {
-    // 1. LOG TO TERMINAL
     console.log("🔥 MIDDLEWARE IS RUNNING FOR:", request.nextUrl.pathname);
 
-    // 2. Run the actual next-intl logic
     const handleI18nRouting = createMiddleware({
         locales: ['en', 'az', 'fr'],
         defaultLocale: 'en'

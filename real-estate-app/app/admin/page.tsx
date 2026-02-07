@@ -2,17 +2,13 @@
 import { useState } from 'react';
 
 export default function Admin() {
-    // ==========================================
-    // 🔒 SECURITY LOGIC (ADDED)
-    // ==========================================
+
     const [isUnlocked, setIsUnlocked] = useState(false);
     const [passwordInput, setPasswordInput] = useState('');
     const [authError, setAuthError] = useState(false);
 
-    // 👇 SET YOUR PASSWORD HERE
     const ADMIN_PASSWORD = "adminadmin";
 
-    // --- STYLES (Moved up so Login screen can use them) ---
     const inputClass = "w-full bg-neutral-900 border-2 border-neutral-800 rounded-none px-4 py-2 outline-none focus:border-red-500 text-neutral-200 placeholder-neutral-600 transition-colors font-light";
     const labelClass = "block text-[12px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-3";
 
@@ -27,9 +23,7 @@ export default function Admin() {
         }
     };
 
-    // ==========================================
-    // ⚙️ ORIGINAL LOGIC
-    // ==========================================
+
     const languages = [
         { code: 'en', label: 'English', flag: '🇬🇧' },
         { code: 'az', label: 'Azerbaijani', flag: '🇦🇿' },
@@ -75,9 +69,7 @@ export default function Admin() {
         }
     };
 
-    // ==========================================
-    // 🔒 RENDER: LOGIN SCREEN
-    // ==========================================
+
     if (!isUnlocked) {
         return (
             <div className="min-h-screen bg-black flex items-center justify-center font-sans text-neutral-200">
@@ -115,14 +107,11 @@ export default function Admin() {
         );
     }
 
-    // ==========================================
-    // 🏠 RENDER: ORIGINAL ADMIN DASHBOARD
-    // ==========================================
+
     return (
         <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-white selection:text-black">
             <div className="max-w-7xl mx-auto px-6 py-12">
 
-                {/* --- HEADER --- */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-neutral-900 pb-8">
                     <div>
                         <h1 className="text-4xl font-light text-white tracking-tight mb-2">New Listing</h1>
@@ -140,10 +129,8 @@ export default function Admin() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-                    {/* --- LEFT COLUMN: DATA (4 cols) --- */}
                     <div className="lg:col-span-4 space-y-8">
 
-                        {/* Image Preview Card */}
                         <div className="aspect-square bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden relative group">
                             {form.image ? (
                                 <img src={form.image} alt="Preview" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
@@ -155,7 +142,6 @@ export default function Admin() {
                             )}
                         </div>
 
-                        {/* Details Inputs */}
                         <div className="space-y-6">
                             <div>
                                 <label className={labelClass}>Image Source</label>
@@ -201,10 +187,8 @@ export default function Admin() {
                         </div>
                     </div>
 
-                    {/* --- RIGHT COLUMN: CONTENT (8 cols) --- */}
                     <div className="lg:col-span-8">
 
-                        {/* Language Tabs */}
                         <div className="flex gap-8 mb-8 border-b border-neutral-900">
                             {languages.map((lang) => (
                                 <button
@@ -221,7 +205,6 @@ export default function Admin() {
                             ))}
                         </div>
 
-                        {/* Content Inputs */}
                         <div className="space-y-8 animate-in fade-in duration-500">
                             <div>
                                 <label className={labelClass}>
