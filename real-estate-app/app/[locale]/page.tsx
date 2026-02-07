@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Banner from '@/components/Banner';
 import { House } from '../models/House';
+import AbbLine from '@/components/AbbLine';
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
@@ -75,7 +76,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     ))}
                 </div>
             </main>
-
+            <AbbLine />
             <Footer />
         </div>
     );
