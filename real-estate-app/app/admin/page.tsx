@@ -2,6 +2,34 @@
 import { useState } from 'react';
 
 export default function Admin() {
+    // ==========================================
+    // 🔒 SECURITY LOGIC (ADDED)
+    // ==========================================
+    const [isUnlocked, setIsUnlocked] = useState(false);
+    const [passwordInput, setPasswordInput] = useState('');
+    const [authError, setAuthError] = useState(false);
+
+    // 👇 SET YOUR PASSWORD HERE
+    const ADMIN_PASSWORD = "adminadmin";
+
+    // --- STYLES (Moved up so Login screen can use them) ---
+    const inputClass = "w-full bg-neutral-900 border-2 border-neutral-800 rounded-none px-4 py-2 outline-none focus:border-red-500 text-neutral-200 placeholder-neutral-600 transition-colors font-light";
+    const labelClass = "block text-[12px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-3";
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (passwordInput === ADMIN_PASSWORD) {
+            setIsUnlocked(true);
+            setAuthError(false);
+        } else {
+            setAuthError(true);
+            setPasswordInput('');
+        }
+    };
+
+    // ==========================================
+    // ⚙️ ORIGINAL LOGIC
+    // ==========================================
     const languages = [
         { code: 'en', label: 'English', flag: '🇬🇧' },
         { code: 'az', label: 'Azerbaijani', flag: '🇦🇿' },
@@ -47,14 +75,52 @@ export default function Admin() {
         }
     };
 
-    // --- STYLES ---
-    // Minimalist Dark Input Style
-    const inputClass = "w-full bg-neutral-900 border border-neutral-800 rounded-none px-4 py-2 outline-none focus:border-neutral-500 text-neutral-200 placeholder-neutral-600 transition-colors font-light";
-    const labelClass = "block text-[12px] font-bold text-neutral-500 uppercase tracking-[0.2em] mb-3";
+    // ==========================================
+    // 🔒 RENDER: LOGIN SCREEN
+    // ==========================================
+    if (!isUnlocked) {
+        return (
+            <div className="min-h-screen bg-black flex items-center justify-center font-sans text-neutral-200">
+                <div className="w-full max-w-sm p-8">
+                    <div className="mb-8 text-center">
+                        <h1 className="text-2xl font-light text-white tracking-tight">Admin Access</h1>
+                        <p className="text-neutral-500 text-sm mt-2">Enter password to continue</p>
+                    </div>
 
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        <input
+                            type="password"
+                            value={passwordInput}
+                            onChange={(e) => setPasswordInput(e.target.value)}
+                            placeholder="Password..."
+                            className={`${inputClass} text-center tracking-widest`}
+                            autoFocus
+                        />
+
+                        <button
+                            type="submit"
+                            className="w-full py-4 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-green-600 transition-all active:scale-95"
+                        >
+                            Unlock
+                        </button>
+
+                        {authError && (
+                            <div className="text-red-500 text-xs text-center uppercase tracking-widest font-bold animate-pulse">
+                                Incorrect Password
+                            </div>
+                        )}
+                    </form>
+                </div>
+            </div>
+        );
+    }
+
+    // ==========================================
+    // 🏠 RENDER: ORIGINAL ADMIN DASHBOARD
+    // ==========================================
     return (
         <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-white selection:text-black">
-            <div className="max-w-7xl mx-auto px-6 ">
+            <div className="max-w-7xl mx-auto px-6 py-12">
 
                 {/* --- HEADER --- */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-neutral-900 pb-8">
@@ -170,7 +236,7 @@ export default function Admin() {
                                         title: { ...form.title, [activeTab]: e.target.value }
                                     })}
                                     placeholder="Enter property name..."
-                                    className={`${inputClass} text-xl  font-normal`}
+                                    className={`${inputClass} text-xl  font-normal`}
                                 />
                             </div>
 
